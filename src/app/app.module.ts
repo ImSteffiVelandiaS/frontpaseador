@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DuenioListComponent } from './components/duenio-list/duenio-list.component';
+import { CreateDuenioComponent } from './components/create-duenio/create-duenio.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DuenioListComponent,
+    CreateDuenioComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

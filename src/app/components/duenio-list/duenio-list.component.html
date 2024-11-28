@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Lista de dueños</h1>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Dirección</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let due of duenio">
+                    <th scope="row"> {{due.id}}  </th>
+                    <td>{{due.nombre}}</td>
+                    <td>{{due.apellido}}</td>
+                    <td>{{due.email}}</td>
+                    <td>{{due.telefono}}</td>
+                    <td>{{due.direccion}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <button class="btn btn-primary" routerLink="/createDuenio">Crear Dueño</button>
+        </div>
+    </div>
+</div>
