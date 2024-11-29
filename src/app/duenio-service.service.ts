@@ -32,4 +32,10 @@ export class DuenioServiceService {
   }
   //modifcar  eliminar consulta x id
 
+
+  // Eliminar dueño
+  deleteDuenio(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
 }
