@@ -30,5 +30,6 @@ export class DuenioServiceService {
   createDuenio(duenio: Duenio):Observable<Duenio>{
     return this.http.post<Duenio>(this.apiUrl, duenio)
   }
+  //modifcar  eliminar consulta x id
 
 }

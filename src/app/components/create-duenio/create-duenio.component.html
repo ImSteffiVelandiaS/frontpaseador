@@ -2,6 +2,155 @@
     <div class="row">
         <div class="col">
             <h1>Formulario de creación</h1>
+
+            <form (ngSubmit)="onSubmit()" #duenioForm="ngForm" novalidate>
+                <!--Nombre-->
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input 
+                    type="text"
+                    id="nombre"
+                    class="form-control"
+                    required
+                    minlength="2"
+                    maxlength="20"
+                    name="nombre"
+                    [(ngModel)]="duenio.nombre"
+                    #nombre="ngModel"
+                    >
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="nombre.invalid  && (nombre.dirty || nombre.touched)" class="text-danger">
+                        <small *ngIf="nombre.errors?.['required']"> El nombre es obligatorio</small>
+                        <small *ngIf="nombre.errors?.['minlength']">El nombre debe tener mas de 2 caracteres</small>
+                        <small *ngIf="nombre.errors?.['maxlength']">El nombre debe tener menos de 20 caracteres</small>
+                    </div>
+                </div>
+
+                <!--Apellido-->
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input 
+                    type="text"
+                    id="apellido"
+                    class="form-control"
+                    required
+                    name="apellido"
+                    [(ngModel)]="duenio.apellido"
+                    #ape="ngModel"
+                    >
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="ape.invalid  && (ape.dirty || ape.touched)" class="text-danger">
+                        <small *ngIf="ape.errors?.['required']"> El Apellido es obligatorio</small>
+                    </div>
+                </div>
+                <!--Email-->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    required
+                    email
+                    name="email"
+                    [(ngModel)]="duenio.email"
+                    #mail="ngModel"
+                    >
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="mail.invalid  && (mail.dirty || mail.touched)" class="text-danger">
+                        <small *ngIf="mail.errors?.['required']"> El Email es obligatorio</small>
+                        <small *ngIf="mail.errors?.['email']"> El Email no tiene el formato solicitado</small>
+                    </div>
+                </div>
+                <!--Telefono-->
+                <div class="form-group">
+                    <label for="nombre">Telefono</label>
+                    <input 
+                    type="text"
+                    id="telefono"
+                    class="form-control"
+                    required
+                    pattern ="^[0-9]{10}"
+                    name="telefono"
+                    [(ngModel)]="duenio.telefono"
+                    #telefono="ngModel"
+                    >
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="telefono.invalid  && (telefono.dirty || telefono.touched)" class="text-danger">
+                        <small *ngIf="telefono.errors?.['required']"> El Telefono es obligatorio</small>
+                        <small *ngIf="telefono.errors?.['pattern']"> El telefono debe tener 10 digitos</small>                       
+                    </div>
+                </div>
+                <!--Direccion-->
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input 
+                    type="text"
+                    id="direccion"
+                    class="form-control"
+                    required
+                    name="direccion"
+                    [(ngModel)]="duenio.direccion"
+                    #direccion="ngModel"
+                    >
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="direccion.invalid  && (direccion.dirty || direccion.touched)" class="text-danger">
+                        <small *ngIf="direccion.errors?.['required']"> La direccion es obligatoria</small>
+                    </div>
+                </div>
+                <!--Ciudad-->
+                <div class="form-group">
+                    <label for="ciudad">ciudad</label>
+                    <select 
+                    id="ciudad"
+                    class="form-control"
+                    required
+                    name="apellido"
+                    [(ngModel)]="duenio.ciudad"
+                    #ciudad="ngModel"
+                    >
+                        <option value="" disabled selected>Seleccione Ciudad</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Medellin">Medellin</option>
+                        <option value="Bogota">Bogota</option>
+                        <option value="Manizales">Manizales</option>
+                    </select>    
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="ciudad.invalid  && (ciudad.dirty || ciudad.touched)" class="text-danger">
+                        <small *ngIf="ciudad.errors?.['required']"> La Ciudad es obligatorio</small>
+                    </div>
+                </div>
+
+                <!--Genero-->
+                <div class="form-group">
+                    <label for="genero">Genero</label>
+                    <select 
+                    id="genero"
+                    class="form-control"
+                    required
+                    name="genero"
+                    [(ngModel)]="duenio.genero"
+                    #genero="ngModel"
+                    >
+                        <option value="" disabled selected>Seleccione genero</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>    
+                    <!--div de validaciones Alerts-->
+                    <div *ngIf="genero.invalid  && (genero.dirty || genero.touched)" class="text-danger">
+                        <small *ngIf="genero.errors?.['required']"> El genero es obligatorio</small>
+                    </div>
+                </div>
+
+                <button 
+                class="btn btn-success" 
+                type="submit"
+                [disabled]="duenioForm.invalid"
+                >Enviar</button>
+            </form>
+
+
+
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DuenioListComponent } from './components/duenio-list/duenio-list.component';
 import { CreateDuenioComponent } from './components/create-duenio/create-duenio.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,6 +20,8 @@ import { CreateDuenioComponent } from './components/create-duenio/create-duenio.
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

@@ -14,6 +14,6 @@ export class DuenioListComponent {
 
   ngOnInit():void{
     this.duenioservice.getDuenios().subscribe((data) =>(this.duenio=data));
-    console.log(this.duenio);
+    console.log("data: ", this.duenio);
   }
 }
