@@ -12,7 +12,8 @@
             <th scope="col">Email</th>
             <th scope="col">Teléfono</th>
             <th scope="col">Dirección</th>
-            <th scope="col">Acción</th>
+            <th scope="col">Acción 1</th>
+            <th scope="col">Acción 2</th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +28,7 @@
               <button class="btn btn-warning" (click)="openModal(due)">Editar</button>
             </td>
             <td>
-              <button class="btn btn-danger" (click)="deleteDueni(due.id)">Eliminar</button>
+              <button class="btn btn-danger" (click)="deleteDuenio(due.id)">Eliminar</button>
             </td>
             
           </tr>
@@ -48,7 +49,13 @@
         <form (ngSubmit)="updateDuenio()">
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" id="nombre" class="form-control" [(ngModel)]="selectedDuenio.nombre" name="nombre" required />
+            <input type="text" 
+            id="nombre" 
+            class="form-control"
+             [(ngModel)]="selectedDuenio.nombre" 
+             name="nombre" 
+             required 
+             />
           </div>
           <div class="mb-3">
             <label for="apellido" class="form-label">Apellido</label>
